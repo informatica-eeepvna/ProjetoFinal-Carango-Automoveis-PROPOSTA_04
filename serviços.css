@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Nome+da+Fonte');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+  
+  a {
+    color: #000000b3;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+  max-width: 300px;
+  margin-left: -100px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'League Gothic', sans-serif;
+    background: #ffffff;
+    height: 10.6vh;
+    box-shadow: 5px 10px 15px #00000052;
+}
+
+  
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-bottom: 20px;
+
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+  margin-bottom: 2px;
+  margin-top: 25px;
+}
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #000000;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 999px) {
+
+ 
+   .slides{
+        .slide img:not(.mobile-banner) {
+          display: none;
+      }
+      .slide img.mobile-banner {
+          display: block;
+      }
+
+      
+      .slides{
+        width: 100vw;
+        object-fit: cover;
+        object-position: center;
+      }
+
+    
+   }
+
+   
+  .container-fluid{
+    background-color: #eab650;
+    height: 50px;
+    text-align: right;
+    font-size: 12px;
+    box-shadow: 5px -10px 15px #00000052;
+ 
+  }
+    
+    .nav-list.active {
+      transform: translateX(0);
+      opacity: 1;
+      z-index: 999; /* Defina um valor alto para garantir que o menu sobreponha outros elementos */
+      margin-top: 60px;
+
+    }
+  
+    .nav-list.active li {
+      animation: navLinkFade 0.5s ease forwards;
+      animation-delay: 0.3s; /* Adicione um atraso para cada item do menu */
+    }
+  
+    body {
+      overflow-x: hidden;
+    }
+    
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 35vw;
+      height: 50vh;
+      background: #00000046;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+  
+  /*topo do site*/
+
+  .top-header{
+    background-color: #eab650;
+    height: 50px;
+    text-align: right;
+    box-shadow: 5px -10px 15px #00000052;
+  }
+
+
+  .top-ofertas{
+    background-color: #eab650;
+    height: 80px;
+    text-align: right;
+    justify-content: center;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.266);
+    text-align: center;
+    font-size: 25px;
+    font-family: 'League Gothic', sans-serif;
+  }
+
+
+  .serviços {
+    padding: 20px;
+}
+
+.habilidades {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.interface {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tipografias {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.plus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hab-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    max-width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hab-box h3 {
+    margin: 10px 0;
+}
+
+.hab-box p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.486);
+}
+
+.gray-icon {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.548);
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .hab-box {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hab-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .plus {
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      flex-direction:column;
+  }
+}
+
+/* Estilos para os serviços */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+}
+
+/* Estilos para o menu móvel */
+.mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .line1, .line2, .line3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .change .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+
+  .change .line2 {
+    opacity: 0;
+  }
+
+  .change .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  .nav-list {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin: 15px 0;
+  }
+}
+
+.tipografi{
+    font-size: 35px;
+    color: white;
+    
+}
+
+.tipografias{
+  font-size: 40px;
+  color: #eab650;
+  font-family: 'League Gothic', sans-serif;
+
+}
+
+
+.tipografia{
+  font-size: 20px;
+  color: #eab650;
+  font-family: 'League Gothic', sans-serif;
+
+}
+
+.tipografias2{
+  font-size: 25px;
+  color: white;
+  font-family: 'League Gothic', sans-serif;
+
+}
+
+.tipografias1{
+  font-size: 15px;
+  color: white;
+  font-family: 'League Gothic', sans-serif;
+
+}
+
+.tipografi4{
+  font-size: 20px;
+  color: #eab650;
+  font-family: 'League Gothic', sans-serif;
+
+}
+
+p{
+  font-size: 16px;
+  align-items: justify;
+  text-align: justify;
+}
+
+/* Estilo padrão */
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hab-box {
+  flex: 1 0 300px;
+  text-align: center;
+  padding: 20px;
+  background-color: #eab650;
+  color: #00000090;
+  border-radius: 20px;
+  margin-top: 45px;
+  transition: .2s;
+}
+
+.hab-box i {
+  font-size: 48px;
+  color: #262626;
+}
+
+.hab-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffffff78;
+}
+
+/* Estilo para tablets */
+@media only screen and (max-width: 768px) {
+  .hab-box {
+    flex: 0 0 calc(80% - 20px);
+  }
+}
+
+/* Estilo para smartphones */
+@media only screen and (max-width: 480px) {
+  .hab-box {
+    flex: 0 0 calc(100% - 40px);
+    max-width: 300px; /* Adicionando uma largura máxima para evitar que os cards fiquem muito largos */
+    margin-top: 20px; /* Reduzindo um pouco o espaço entre os cards */
+  }
+
+  .habilidades {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Título responsivo */
+h1.tipografias {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2.title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.plus {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.habilidades {
+  padding: 40px 4px;
+}
+
+section.habilidades .plus {
+  gap: 60px;
+}
+
+section.sobre .sol {
+  display: flex;
+  align-items: center;
+}
+
+section.txt-sobre p {
+  margin-left: 20px;
+}
+
+h3{
+    font-family: 'League Gothic', sans-serif;
+
+}
+
+.ui{
+    font-size: 30px;
+}
+/*Ícones*/
+
+.hab-box i {
+    color:#00000090;
+}
+
+/*RODAPÉ*/
+
+footer {
+  border-top:  solid 5px #eab650;
+  background-color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  color: #eab650;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .social-icons {
+      gap: 10px;
+  }
+  
+  .social-icon {
+      font-size: 20px;
+  }
+}
+
+.font{
+    text-align: center;
+    padding: 0px;
+    font-size: 25px;
+    color: #eab650;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: -50px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  text-align:justify;
+  justify-content: justify;
+  align-items: justify;
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-align:justify;
+  justify-content: justify;
+  align-items: justify;
+}
+
+/*tamanho da logo do rodapé*/
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo {
+  width: 200px; /* Ajuste conforme necessário */
+  height: 200px;
+  margin-right: 20px; /* Espaçamento entre a logo e as informações */
+}
+
+.footer-info {
+  flex-grow: 1; /* Para ocupar o espaço restante */
+  text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+.copyright {
+  margin-right: -80px; /* Espaçamento para a direita */
+  text-align: center;
+  color: #eab650;
+}
+

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Carango Automóveis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="top-header">
+      <div class="container-fluid">
+        <strong><br>Horário de atendimento:</strong>
+        <span>Seg a sex-8h às 18h | Sáb-8h às 15h</span>
+      </div>
+    </div>
+    <nav>
+      <img class="logo" src="images/logo.png" alt="Logo CarangoAutomóveis" />
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html"><br><b>INÍCIO</b></a></li>
+        <li><a href="serviços.html"><br><b>SERVIÇOS</b></a></li>
+        <li><a href="local.html"><br><b>LOCALIZAÇÃO</b></a></li>
+        <li><a href="reserva.html"><br><b>RESERVE</b></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--código teste-->
+ 
+  <div class="bannercontainer">
+    <div class="slides">
+      <input class="input" type="radio" name="slide" id="slide1" checked>
+      <input class="input" type="radio" name="slide" id="slide2">
+      <input class="input" type="radio" name="slide" id="slide3">
+      <div class="slide">
+        <img src="images/Banners 1.png" alt="banner1" class="desktop-banner">
+        <img src="images/Banners 1.1.png" alt="banner1" class="mobile-banner">
+      </div>
+      <div class="slide">
+        <img src="images/Banners 2.png" alt="banner2" class="desktop-banner">
+        <img src="images/Banners 2.1.png" alt="banner2" class="mobile-banner">
+      </div>
+      <div class="slide">
+        <img src="images/Banners 3.png" alt="banner3" class="desktop-banner">
+        <img src="images/Banners 3.1.png" alt="banner3" class="mobile-banner">
+      </div>
+    </div>
+    <div class="navigation">
+      <label class="bar" for="slide1"></label>
+      <label class="bar" for="slide2"></label>
+      <label class="bar" for="slide3"></label>
+    </div>
+  </div>
+  
+  <div class="select-container">
+    <select id="car-category" onchange="filterCars()">
+      <option value="todos">Todos</option>
+      <option value="compactos">Compactos</option>
+      <option value="sedans">Sedans</option>
+      <option value="suvs">SUV's</option>
+      <option value="minivans">Minivans</option>
+      <option value="carros-luxo">Carros de luxo</option>
+    </select>
+  </div>
+  
+  <div class="container" id="car-container">
+    <!-- SUV's -->
+    <div class="elemento suvs"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1"></a></div>
+    <div class="elemento suvs"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3"></a></div>
+    <div class="elemento suvs"><a href="jeep.html"><img width="48" height="48" src="https://img.icons8.com/color/48/mercedes-benz.png" alt="mercedes-benz" class="icone1" ></a></div>
+    <div class="elemento suvs"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+    <div class="elemento suvs"><a href="ford.html"><img src="https://img.icons8.com/?size=100&id=57660&format=png&color=000000" alt="Ford" class="icone6" ></a></div>
+    <div class="elemento suvs"><a href="ford.html"><img src="https://img.icons8.com/?size=100&id=57660&format=png&color=000000" alt="Ford" class="icone6" ></a></div>
+
+    <!-- Carros de luxo -->
+    <div class="elemento carros-luxo"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1" ></a></div>
+    <div class="elemento carros-luxo"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+    <div class="elemento carros-luxo"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1" ></a></div>
+    <div class="elemento carros-luxo"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+   
+    <!-- Compactos -->
+    <div class="elemento compactos"><a href="chevrolet.html"><img src="https://img.icons8.com/color/48/000000/chevrolet.png" alt="Chevrolet" class="icone5" ></a></div>
+    <div class="elemento compactos"><a href="chevrolet.html"><img src="https://img.icons8.com/color/48/000000/chevrolet.png" alt="Chevrolet" class="icone5" ></a></div>
+    <div class="elemento compactos"><a href="honda.html"><img src="https://img.icons8.com/ios/50/honda.png" alt="Honda" class="icone7" ></a></div>
+    <div class="elemento compactos"><a href="honda.html"><img src="https://img.icons8.com/ios/50/honda.png" alt="Honda" class="icone7" ></a></div>
+
+    <!-- Sedans -->
+    <div class="elemento sedans"><a href="hyundai.html"><img src="https://img.icons8.com/color/48/000000/hyundai.png" alt="Hyundai" class="icone8" ></a></div>
+    <div class="elemento compactos"><a href="chevrolet.html"><img src="https://img.icons8.com/color/48/000000/chevrolet.png" alt="Chevrolet" class="icone5" ></a></div>
+    <div class="elemento minivans"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+    <div class="elemento minivans"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1" ></a></div>
+
+    <!-- Minivans -->
+    <div class="elemento minivans"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1" ></a></div>
+    <div class="elemento minivans"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+    <div class="elemento minivans"><a href="jeep.html"><img src="https://img.icons8.com/ios-filled/50/jeep.png" alt="Jeep" class="icone1" ></a></div>
+    <div class="elemento minivans"><a href="nissan.html"><img width="48" height="48" src="https://img.icons8.com/color/48/nissan.png" alt="nissan" class="icone3" ></a></div>
+</div>
+
+  
+
+
+  <br><br>
+  <!--ofertas do dia-->
+  <h1>ÚLTIMAS NOVIDADES</h1>
+  <div class="ofertas">
+    <div class="oferta">
+      <div class="conteudo-oferta"> <!-- Border ao redor da imagem e descrição -->
+        <img src="https://resized-images.autoconf.com.br/600x450/filters:format(jpg)/veiculos/fotos/442991/62a7c3c2-e9f5-4bf7-9a4a-3424359b31f8.jpg" alt="Produto 1">
+        <p>Honda Civic: Elegante e potente, excelente para quem busca desempenho e estilo.</p>
+      </div>
+      <div class="preco">R$ 150.000</div>
+    </div>
+    <div class="oferta">
+      <div class="conteudo-oferta">
+        <img src="https://resized-images.autoconf.com.br/600x450/filters:format(jpg)/veiculos/fotos/422045/a7282d43-e5c7-4bf4-928a-949264045766.jpg" alt="Produto 2">
+        <p>Ford Focus: Confortável e potente, excelente para quem busca desempenho.</p>
+      </div>
+      <div class="preco">R$ 120.000</div>
+    </div>
+    <div class="oferta">
+      <div class="conteudo-oferta">
+        <img src="https://resized-images.autoconf.com.br/600x450/filters:format(jpg)/veiculos/fotos/436448/03ef5713-367f-47a7-b743-d93056e8a3cd.jpg" alt="Produto 3">
+        <p>Mercedes-Benz A-Class: Compacto e luxuoso, ideal para o dia a dia na cidade.</p>
+      </div>
+      <div class="preco">R$ 220.000</div>
+    </div>
+    
+    <div class="oferta">
+      <div class="conteudo-oferta">
+        <img src="https://resized-images.autoconf.com.br/600x450/filters:format(jpg)/veiculos/fotos/436448/03ef5713-367f-47a7-b743-d93056e8a3cd.jpg" alt="Produto 3">
+        <p>Mercedes-Benz A-Class: Compacto e luxuoso, ideal para o dia a dia na cidade.</p>
+      </div>
+      <div class="preco">R$ 220.000</div>
+    </div>
+    
+  </div>
+
+
+  <!--missão, visão e valores-->
+  <div class="sombra">
+    <div class="seção_missão">
+      <section class="section__container explore__container">
+        <div class="explore__header">
+          <div class="explore__nav">
+
+          </div>
+        </div>
+        <div class="explore__grid">
+          <div class="explore__card">
+            <span><i class="ri-flag-fill"></i></span>
+            <h4>Missão</h4>
+            <p>No Carango automóveis, nossa missão é ser a referència em soluções de mobilidade que transcendam as expectativas dos nossos clientes. Para alcançar esse objetivo, comprometemo-nos em oferecer soluções cuidadosamente selecionadas de veículos de qualidade superior, complementada por serviços personalizados e um atendimento excepcional que reflita nosso compromisso inabalável com a satisfação om cliente. Além disso, garantimos a confiança e a segurança em todas as transações, de modo a priorizar a transparência e a integridade em cada interação. Nosso foco é não apenas atender as necessidades de mobilidade mas superá-las e estabelecer padrões elevados na indústria automotiva.
+            </p>
+          </div><br><br>
+
+          <div class="explore__card">
+            <span><i class="ri-eye-fill"></i></span>
+            <h4>Visão</h4>
+            <p>Em Carango Automóveis, nossa visão é ser a rede automotiva que define a referència em qualidade e satisfação do cliente, sempre guiados pelos valores de excelência, integridade, inovação e comprometimento. Buscamos criar um legado duradouro, onde cada cliente se sinta valorizado e bem atendido, sabendo que pode contar conosco para todas as suas necessidades de mobilidade. No carango automóveis, acreditamos que ao elevar continuamente nossos padrões, contribuiremos para uma experiència de cliente incomparável, solidificando nossa posição como líderes de mercado e pioneiros na indústria automotiva.
+            </p>
+          </div><br><br>
+
+          <div class="explore__card">
+            <span><i class="ri-hand-heart-fill"></i></span>
+            <h4>Valores</h4>
+            <p>• Excelência: Buscamos constantemente a excelência em tudo o que realizamos, desde a seleção de nossos produtos até o atendimento ao cliente.
+              • Integridade: Nosso compromisso com a integridade advém da atuação transparência e ética em todas as nossas relações. com a honestidade,
+              • Inovação: Estamos sempre em busca de novas soluções e tecnologias para melhorar nossos produtos
+              e serviços. • Comprometimento: Nosso compromisso é com a satisfação e fidelização dos clientes, garantindo um relacionamento de longo prazo.
+            </p>
+          </div><br><br>
+        </div>
+      </section>
+    </div>
+    <br><br>
+  </div>
+  <script src="mobile-navbar.js"></script>
+  <script src="js.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+<footer>
+  <div class="footer-container">
+    <img src="images/logo.rodapé.png" alt="Logo Carango Automóveis" class="footer-logo">
+    <div class="footer-info">
+      <h1 class="font">Nos siga nas redes sociais:</h1>
+      <p>Siga-nos nas redes sociais da Carango Automóveis para ficar por dentro das últimas novidades, promoções exclusivas e dicas sobre mobilidade e cuidados com seu veículo! Acompanhe-nos e faça parte da nossa comunidade de apaixonados por automóveis.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/carango_automoveis/?hl=en" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61558447925840&sk=photos" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/CarangoAut80442" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p class="copyright"><sup>&copy;</sup>2024 Carango Automóveis. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+</html>

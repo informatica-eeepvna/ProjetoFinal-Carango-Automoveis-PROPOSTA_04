@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Carango Automóveis</title>
+  <link rel="stylesheet" href="reserva.css" />
+  <link rel="stylesheet" href="serviços.css" />
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="top-header">
+      <div class="container-fluid">
+        <strong><br>Horário de atendimento:</strong>
+        <span>Seg a sex-8h às 18h | Sáb-8h às 15h</span>
+      </div>
+    </div>
+    <nav>
+      <img class="logo" src="images/logo.png" alt="Logo CarangoAutomóveis" />
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html"><br><b>INÍCIO</b></a></li>
+        <li><a href="serviços.html"><br><b>SERVIÇOS</b></a></li>
+        <li><a href="local.html"><br><b>LOCALIZAÇÃO</b></a></li>
+        <li><a href="reserva.html"><br><b>RESERVE</b></a></li>
+      </ul>
+    </nav>
+  </header>
+  <br><br><br>
+  
+
+    <!-- Título do Reserve Seu Veículo -->
+    <div class="top-reserve">
+        <br>
+        <h1 class="tipografias2"><strong><CENTER>RESERVE SEU VEÍCULO CONOSCO.</CENTER></strong></h1>
+    </div>
+    
+    <br><br><br>
+
+    <!-- Formulário de Reserva de Veículo -->
+    <div class="containerveiculo">
+        <form id="emailForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="toEmail">Confirme seu Email:</label>
+            <input type="email" id="toEmail" name="toEmail" required><br> <!-- Adicionando o campo de e-mail de destino -->
+            <label for="vehicle">Veículo:</label>
+            <input type="text" id="vehicle" name="vehicle" required><br>
+            <label for="pickupDate">Data de Retirada:</label>
+            <input type="date" id="pickupDate" name="pickupDate" required><br>
+            <label for="returnDate">Data de Devolução:</label>
+            <input type="date" id="returnDate" name="returnDate" required><br>
+            <label for="additionalFeatures">Características Adicionais Desejadas:</label>
+            <textarea id="additionalFeatures" name="additionalFeatures"></textarea><br>
+            <button id="sendEmailButton" type="submit">Enviar</button>
+        </form>
+    </div>
+    <br><br><br>
+    
+
+    <!--INÍCIO DO RODAPÉ-->
+    <footer>
+      <div class="footer-container">
+        <img src="images/logo.rodapé.png" alt="Logo Carango Automóveis" class="footer-logo">
+        <div class="footer-info">
+          <h1 class="font">Nos siga nas redes sociais:</h1>
+          <p>Siga-nos nas redes sociais da Carango Automóveis para ficar por dentro das últimas novidades, promoções exclusivas e dicas sobre mobilidade e cuidados com seu veículo! Acompanhe-nos e faça parte da nossa comunidade de apaixonados por automóveis.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/carango_automoveis/?hl=en" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61558447925840&sk=photos" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/CarangoAut80442" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="social-icon"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyright"><sup>&copy;</sup>2024 Carango Automóveis. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <!--FIM DO RODAPÉ-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="mobile-navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("M1czBZSaPJEzNtvP9");
+        })();
+    
+        document.getElementById('sendEmailButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Evita que o formulário seja enviado pelo método tradicional
+    
+            var templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                vehicle: document.getElementById('vehicle').value,
+                pickupDate: document.getElementById('pickupDate').value,
+                returnDate: document.getElementById('returnDate').value,
+                additionalFeatures: document.getElementById('additionalFeatures').value,
+                to_email: document.getElementById('toEmail').value // Captura o valor do campo de e-mail de destino
+            };
+            
+            emailjs.send('carangoserviços', 'carangoautomoveis', templateParams)
+                .then(function(response) {
+                    alert('E-mail enviado com sucesso!');
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    alert('Erro ao enviar e-mail:', error);
+                    console.log('FAILED...', error);
+                });
+        });
+    </script>
+    
+</body>
+</html>

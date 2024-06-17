@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=Nome+da+Fonte');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  overflow-x: hidden;
+}
+
+a {
+  color: #000000b3;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  max-width: 300px;
+  margin-left: -100px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'League Gothic', sans-serif;
+  background: #ffffff;
+  height: 10.6vh;
+  box-shadow: 5px 10px 15px #00000052;
+}
+
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-bottom: 20px;
+
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+  margin-bottom: 2px;
+  margin-top: 25px;
+}
+
+/* menu hambúrguer */
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #000000;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  .slides {
+    .slide img:not(.mobile-banner) {
+      display: none;
+    }
+
+    .slide img.mobile-banner {
+      display: block;
+    }
+
+    .slides {
+      width: 100vw;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 999;
+    /* Defina um valor alto para garantir que o menu sobreponha outros elementos */
+    margin-top: 60px;
+  }
+
+  .nav-list.active li {
+    animation: navLinkFade 0.5s ease forwards;
+    animation-delay: 0.3s;
+    /* Adicione um atraso para cada item do menu */
+  }
+
+
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 35vw;
+    height: 50vh;
+    background: #00000046;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+  margin-top: 60px
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+  /* Adicione a cor de fundo desejada */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Adicione uma sombra suave */
+}
+
+.bannercontainer {
+  padding-top: 16vh;
+}
+
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+
+  .bannercontainer {
+    padding-top: 0.6vh;
+    /* Adapte conforme necessário */
+  }
+}
+
+/*topo do site*/
+
+.container-fluid {
+  background-color: #eab650;
+  height: 50px;
+  text-align: right;
+  font-size: 12px;
+  box-shadow: 5px -10px 15px #00000052;
+
+}
+
+.top-ofertas {
+  background-color: #eab650;
+  height: 80px;
+  text-align: right;
+  justify-content: center;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.266);
+  text-align: center;
+  font-size: 25px;
+  font-family: 'League Gothic', sans-serif;
+}
+
+/*slider*/
+
+
+/* Estilos padrão para desktop */
+.slide img.desktop-banner {
+  width: 100%;
+  /* Garante que a imagem do slide ocupe toda a largura do conteúdo */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  display: block;
+  /* Garante que a imagem não tenha espaços em branco extras */
+  margin: 0 auto;
+  /* Centraliza o banner */
+}
+
+.slide img.mobile-banner {
+  display: none;
+  /* Esconde o banner móvel em desktop */
+}
+
+.bannercontainer {
+  width: 100%;
+  /* Define a largura para ocupar 100% da largura da viewport */
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  flex: 1 0 100%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:nth-of-type(1):checked~.slides {
+  transform: translateX(0%);
+}
+
+input[type="radio"]:nth-of-type(2):checked~.slides {
+  transform: translateX(-100%);
+}
+
+input[type="radio"]:nth-of-type(3):checked~.slides {
+  transform: translateX(-200%);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.bar {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  margin: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.bar:hover {
+  background-color: white;
+}
+
+.slides.sliding {
+  transition: transform 0.6s ease;
+}
+
+/* Responsividade */
+@media (max-width: 1900px) {
+  .slide img.desktop-banner {
+    max-width: 100%;
+    /* Ajusta a largura do banner para não ultrapassar a tela */
+    height: auto;
+    /* Mantém a proporção da imagem */
+  }
+}
+
+@media (max-width: 888px) {
+  .slide img.desktop-banner {
+    display: none;
+  }
+
+  .slide img.mobile-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide img.desktop-banner {
+    display: none;
+  }
+
+  .slide img.mobile-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*Início dos estilos da barra abaixo do banner DESKTOP*/
+
+.container {
+  background-color: #F5F5F5;
+  max-height: 226px;
+  margin-top: -80px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  box-shadow: 5px 10px 15px #00000052;
+  border-bottom: 3px solid #eab650;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  padding: -15px;
+}
+
+@media screen and (max-width: 999px) {
+  .container {
+    background-color: #F5F5F5;
+    max-height: 236px;
+    margin-top: -80px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    box-shadow: 5px 10px 15px #00000052;
+    border-bottom: 3px solid #eab650;
+    overflow-x: auto;
+    /* Adicionando overflow horizontal */
+    overflow-y: hidden;
+    gap: 20px;
+    padding: -5px;
+  }
+
+  .elemento {
+    margin-top: 180px;
+    margin-bottom: auto;
+  }
+
+}
+
+/* Adicionando overflow-x mesmo quando não está selecionado 'Todos' */
+.container.overflow-x {
+  overflow-x: auto;
+}
+
+.elemento {
+  background-color: #ffffff;
+  margin-top: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.314);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  object-position: center;
+  width: 200px;
+  height: 100px;
+  transition: border-color 0.1s ease;
+  padding: 10px;
+}
+
+.elemento img {
+  width: 80px;
+  height: 40px;
+}
+
+.elemento:hover {
+  border-color: #eab650;
+  /* Alterando a cor do border ao passar o cursor */
+}
+
+/*ícones da seção de carros por categoria*/
+.icone1,
+.icone2,
+.icone3,
+.icone4,
+.icone5,
+.icone6,
+.icone7,
+.icone8 {
+  height: 300px;
+  /* Ajuste a altura conforme necessário */
+  width: 200px;
+  /* Ajuste a largura conforme necessário */
+}
+
+.imagem-container {
+  pointer-events: none;
+}
+
+/* Escondendo categorias não selecionadas */
+.hidden {
+  display: none;
+}
+
+#car-category {
+  width: 200px;
+  /* Largura do select */
+  padding: 5px;
+  /* Espaçamento interno do select */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  border: 1px solid #ccc;
+  /* Cor da borda */
+  background-color: #fff;
+  /* Cor de fundo */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  outline: none;
+  /* Remover contorno ao focar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra */
+  cursor: pointer;
+  /* Cursor de ponteiro ao passar o mouse */
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*ofertas do dia*/
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #eab650;
+  font-family: 'League Gothic', sans-serif;
+}
+
+.ofertas {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que os elementos quebrem para a próxima linha */
+  justify-content: center;
+  /* Centraliza as ofertas */
+  gap: 20px;
+  /* Espaçamento entre as ofertas */
+  padding: 20px;
+  margin-top: 40px;
+  flex-direction: initial;
+}
+
+.oferta {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  max-width: 500px;
+  /* Limita a largura máxima para manter o layout alinhado */
+
+}
+
+.oferta:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.conteudo-oferta {
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.conteudo-oferta img {
+  width: 100%;
+  /* Preenche o espaço para garantir que seja quadrado */
+  border-radius: 10px;
+}
+
+.conteudo-oferta p {
+  font-size: 0.9em;
+  color: #666;
+  text-align: left;
+  /* Alinhar texto à esquerda */
+}
+
+.oferta .preco {
+  font-size: 1.5em;
+  color: #eab650;
+  font-weight: bold;
+}
+
+.explore__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* Adicionado para melhor ajuste em telas menores */
+  padding: 1rem;
+}
+
+.sombra {
+  box-shadow: 5px -10px 15px #00000052;
+}
+
+
+.explore__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* Adicionado para melhor ajuste em telas menores */
+}
+
+.explore__nav span {
+  padding: 0 6px;
+  font-size: 1.5rem;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore__nav span:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.explore__card {
+  width: 100%;
+  /* Ajuste conforme necessário */
+  max-width: 400px;
+  /* Defina a largura máxima desejada */
+  margin: 20px;
+  /* Adicione margem para separar os cards */
+  padding: 20px;
+  /* Adicione espaço interno para um visual mais espaçado */
+  box-sizing: border-box;
+  /* Certifique-se de que as bordas e o preenchimento não aumentem a largura total */
+  transition: background-color 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  /* Adicione transform para suavizar a transição */
+  text-align: justify;
+  border: 1px solid #000000;
+  border-radius: 20px;
+}
+
+.explore__grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* Alterado para wrap para melhor ajuste em telas menores */
+  justify-content: space-around;
+  /* Distribua os cards uniformemente na linha */
+}
+
+.explore__card:hover {
+  background-color: var(--primary-color-extra-light);
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.explore__card span {
+  display: inline-block;
+  padding: 2px 9px;
+  margin-bottom: 1rem;
+  margin-top: -200px;
+  font-size: 1.75rem;
+  color: var(--white);
+  background-color: var(--secondary-color-dark);
+  border-radius: 5px;
+}
+
+.explore__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white);
+
+}
+
+.explore__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.explore__card a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.explore__card a:hover {
+  color: var(--secondary-color);
+}
+
+.class__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Tornar o grid responsivo */
+  gap: 2rem;
+}
+
+.seção_missão {
+  background-color: #eab650;
+  min-height: 450px;
+  /* Usar min-height em vez de height para flexibilidade */
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Centralizar verticalmente */
+  box-shadow: 5px 10px 15px #00000052;
+  padding: 1rem;
+  flex-wrap: wrap;
+  /* Adicionado para melhor ajuste em telas menores */
+  font-family: 'League Gothic', sans-serif;
+}
+
+
+
+@media (max-width: 768px) {
+  .explore__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .explore__nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .explore__card {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .seção_missão {
+    padding: 1rem;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .explore__header {
+    gap: 1rem;
+  }
+
+  .explore__nav {
+    gap: 1rem;
+  }
+
+  .explore__card {
+    margin: 5px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .logo {
+    max-width: 250px;
+    margin-left: -100px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+
+  .container {
+    background-color: #F5F5F5;
+    height: 250px;
+    margin-top: -75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-shadow: 5px 10px 15px #00000052;
+  }
+
+  .elemento {
+    width: 150px;
+    height: 80px;
+    margin-left: 20px;
+    background-color: #ffffff;
+    margin-top: 120px;
+    border: 1px solid #00000000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* Isso vai distribuir os elementos igualmente em três colunas */
+    align-items: center;
+  }
+}
+
+/*RODAPÉ*/
+
+footer {
+  border-top: solid 5px #eab650;
+  background-color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 5px 10px 15px #00000052;
+
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  color: #eab650;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .social-icons {
+    gap: 10px;
+  }
+
+
+  .social-icon {
+    font-size: 20px;
+  }
+}
+
+.font {
+  text-align: center;
+  padding: 0px;
+  font-size: 25px;
+  color: #eab650;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: -50px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  text-align: justify;
+  justify-content: justify;
+  align-items: justify;
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-align: justify;
+  justify-content: justify;
+  align-items: justify;
+}
+
+.rodapecar {
+  border-top: solid 5px #eab650;
+  background-color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 500px;
+}
+
+@media screen and (max-width: 999px) {
+  .rodapecar {
+    border-top: solid 5px #eab650;
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 1000px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .rodapecar {
+    border-top: solid 5px #eab650;
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 1350px;
+  }
+}
+
+/*tamanho da logo do rodapé*/
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo {
+  width: 200px;
+  /* Ajuste conforme necessário */
+  height: 200px;
+  margin-right: 20px;
+  /* Espaçamento entre a logo e as informações */
+}
+
+.footer-info {
+  flex-grow: 1;
+  /* Para ocupar o espaço restante */
+  text-align: left;
+  /* Alinhamento do texto à esquerda */
+}
+
+.copyright {
+  margin-right: -80px;
+  /* Espaçamento para a direita */
+  text-align: center;
+  color: #eab650;
+}
