@@ -56,9 +56,6 @@ Além do aluguel de carros, a empresa oferece serviços adicionais, como entrega
 - Design responsivo que se adapta a diferentes dispositivos e tamanhos de tela.
 - Navegação intuitiva e fácil para os clientes, com menus claros e organização lógica do conteúdo.
 
-### CRUD dos Carros Disponíveis (BACKEND - EXTRA)
-- CRUD dos carros disponíveis. O administrador deverá ser capaz de cadastrar, atualizar, consultar e apagar carros disponíveis para aluguel. Os carros devem possuir sua descrição, Modelo, versão, Preço e categoria (ex: SUV, Hatch, Sedan, etc).
-
 ## Tecnologias Utilizadas
 - *HTML, CSS e JavaScript*: Essenciais para a construção da estrutura, estilo e interatividade do website.
 - *Bootstrap*: Framework de front-end que agiliza o desenvolvimento e garante um design responsivo e moderno.
